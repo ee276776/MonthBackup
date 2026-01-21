@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD64335C-F998-4B28-B8E1-BDB679B6B1FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MonthBackup_FE</RootNamespace>
+    <AssemblyName>MonthBackup_FE</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CPISData">
+      <HintPath>..\..\..\..\Project\CPISFramework4.0\APGPROD\slnAPGPROD.HISTORY\Reference\CPISData.dll</HintPath>
+    </Reference>
+    <Reference Include="IBM.Data.Informix">
+      <HintPath>..\..\..\..\Project\CPISFramework4.0\APGPROD\slnAPGPROD.WIP\Reference\IBM.Data.Informix.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AR\Provider\AbnMvouHistProvider.cs" />
+    <Compile Include="AR\Provider\As_pdsProvider.cs" />
+    <Compile Include="AR\Provider\CommonProvider.cs" />
+    <Compile Include="AR\Provider\DataBaseProvider2.cs" />
+    <Compile Include="AR\Provider\DyFvSpltProvider.cs" />
+    <Compile Include="AR\Provider\WiplthProvider.cs" />
+    <Compile Include="AR\Service\ArExportService.cs" />
+    <Compile Include="AR_DEL\Provider\CommonProvider.cs" />
+    <Compile Include="AR_DEL\Provider\DatabaseProvider.cs" />
+    <Compile Include="AR_DEL\Provider\DyFvSpltProvider.cs" />
+    <Compile Include="AR_DEL\Service\ArDelExportService.cs" />
+    <Compile Include="AR_EXTEND\Provider\ArExtendProvider.cs" />
+    <Compile Include="AR_EXTEND\Service\ArExtendExecutor.cs" />
+    <Compile Include="AR_EXTEND\Service\ArExtendService.cs" />
+    <Compile Include="ciMesArchive\Eqp\Provider\EquipmentArchiver.cs" />
+    <Compile Include="ciMesArchive\Eqp\Service\EquipArchiveExecutor.cs" />
+    <Compile Include="ciMesArchive\Lot\Provider\LotArchiver.cs" />
+    <Compile Include="ciMesArchive\Lot\Service\LotArchiveExecutor.cs" />
+    <Compile Include="EAR\Provider\DatabaseProvider.cs" />
+    <Compile Include="EAR\Service\EarExportExecutor.cs" />
+    <Compile Include="EAR\Service\EarExportService.cs" />
+    <Compile Include="EAR_DEL\Provider\EarDeleteProvider.cs" />
+    <Compile Include="EAR_DEL\Service\EarDeleteExecutor.cs" />
+    <Compile Include="EAR_DEL\Service\EarDeleteService.cs" />
+    <Compile Include="Helper\DataExporter.cs" />
+    <Compile Include="Helper\LogHelper.cs" />
+    <Compile Include="Helper\MailHelper.cs" />
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRODASSYS_SPC_AR\Provider\ProdassysSpcArProvider.cs" />
+    <Compile Include="PRODASSYS_SPC_AR\Service\ProdassysSpcArExecutor.cs" />
+    <Compile Include="PRODASSYS_SPC_AR\Service\ProdassysSpcArService.cs" />
+    <Compile Include="PRODASSYS_SPC_AR_DEL\Provider\ProdassysSpcArDelProvider.cs" />
+    <Compile Include="PRODASSYS_SPC_AR_DEL\Service\ProdassysSpcArDelExecutor.cs" />
+    <Compile Include="PRODASSYS_SPC_AR_DEL\Service\ProdassysSpcArDelService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\UserDefineTableService.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data-backup-16.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
